@@ -1,0 +1,16 @@
+### I found this solution when I tried to connect my Logitech MX Keys on Debian 12 Bookworm and the bluetooth connection kept dropping.
+### I believe it will work with any bluetooth keyboards
+### On terminal (Ctrl + Alt + T or Alt + T), run the following commands:
+# bluetoothctl
+# power off
+# power on
+# agent KeyboardOnly
+# default-agent
+# pairable on
+# scan on								### Copy your keyboard mac-address 
+# pair <<mac address>> 	### Paste your mac-address here. You will get the 6 number code to type on you keyboard
+trust <mac address>			### Here...
+connect <mac address>		### And here.
+quit
+
+### Done! Your keyboard should now bem connected and working properly.
